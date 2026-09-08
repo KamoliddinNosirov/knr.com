@@ -1,0 +1,184 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+:root {
+  --bg-page: #FFFFFF;
+  /* umumiy fon */
+  --heading: #182231;
+  /* "Azim Pulat's Blog" logotip matni */
+  --nav-text: #7F7F7F;
+  /* nav havolalari (42, Blog, Talks, Channel) */
+  --title: #262626;
+  /* post sarlavhasi (H1) */
+  --date-muted: #999999;
+  /* sana matni */
+  --body-text: #404040;
+  /* asosiy paragraf matni */
+  --link: #16A34A;
+  /* moviy o'rniga — YASHIL (asl #317CF7) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0px;
+}
+nav .container h1 {
+  color: var(--heading);
+  font-size: 24px;
+}
+nav .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+nav .container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .container ul li a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+nav .container ul li a:hover {
+  color: var(--title);
+}
+nav .container ul img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+section .container {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 15px;
+}
+section .container .about {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+}
+section .container .about img {
+  border-radius: 50%;
+  width: 145px;
+  height: 145px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section .container .about .about-detail {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+section .container .about .about-detail h1 {
+  font-size: 45px;
+  color: var(--heading);
+  line-height: 40px;
+  margin: 0px 0px 5px;
+}
+section .container .about .about-detail h3 {
+  font-size: 31.5px;
+  color: var(--nav-text);
+  margin: 0px 0px 12px 5px;
+  font-weight: 400;
+}
+section .container .about .about-detail .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+section .container .about .about-detail .social-links a {
+  font-size: 24px;
+  color: var(--heading);
+}
+section .container .about .about-detail .social-links a:hover {
+  cursor: pointer;
+}
+section .container .detail {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  margin-top: 30px;
+}
+section .container .detail p {
+  font-size: 20px;
+  color: var(--body-text);
+  margin: 0px 0px 18px;
+}
+section .container .detail .btns {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
+}
+section .container .detail .btns button {
+  padding: 10px 25px;
+  border: 1px solid var(--link);
+  background-color: var(--link);
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+section .container .detail .btns button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+section .container .detail .btns button:nth-child(2) {
+  background-color: transparent;
+  color: var(--link);
+}
+
+footer {
+  height: 78px;
+}
+footer .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--body-text);
+}/*# sourceMappingURL=home.css.map */
