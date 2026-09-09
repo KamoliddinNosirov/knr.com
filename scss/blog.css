@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+:root {
+  --bg-page: #FFFFFF;
+  /* umumiy fon */
+  --heading: #182231;
+  /* "Azim Pulat's Blog" logotip matni */
+  --nav-text: #7F7F7F;
+  /* nav havolalari (42, Blog, Talks, Channel) */
+  --title: #262626;
+  /* post sarlavhasi (H1) */
+  --date-muted: #999999;
+  /* sana matni */
+  --body-text: #404040;
+  /* asosiy paragraf matni */
+  --link: #4390F7;
+  /* moviy o'rniga — YASHIL (asl #317CF7) */
+  --nav-color: #FAFAFC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+nav.bgheader {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+nav.bgheader .container {
+  border: none;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0px;
+  border-bottom: 1px solid var(--nav-border-cl);
+}
+nav .container h1 a {
+  font-size: 24px;
+  color: var(--heading);
+}
+nav .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+nav .container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .container ul li a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+nav .container ul li a:hover {
+  color: var(--title);
+}
+nav .container ul img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section {
+  padding-top: 80px;
+  background-color: var(--nav-color);
+  border-bottom: 1px solid var(--nav-border-cl);
+}
+section .container {
+  padding: 20px 0px;
+  text-align: center;
+}
+section .container h1 {
+  font-size: 45px;
+  font-weight: 500;
+  color: var(--body-text);
+  text-transform: uppercase;
+}/*# sourceMappingURL=blog.css.map */

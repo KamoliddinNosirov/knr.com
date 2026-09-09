@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --bg-page: #FFFFFF;
+    /* umumiy fon */
+    --heading: #182231;
+    /* "Azim Pulat's Blog" logotip matni */
+    --nav-text: #7D7D7E;
+    /* nav havolalari (42, Blog, Talks, Channel) */
+    --title: #262626;
+    /* post sarlavhasi (H1) */
+    --date-muted: #999999;
+    /* sana matni */
+    --body-text: #404040;
+    /* asosiy paragraf matni */
+    --link: #4390F7;
+    /* moviy o'rniga — YASHIL (asl #317CF7) */
+    --nav-color: #FAFAFC;
+    --nav-border-cl: #EDEDEF;
+    --figure-text: #7B828A;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &.bgheader{
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        .container{
+            border: none;
+        }
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 0px;
+        border-bottom: 1px solid var(--nav-border-cl);
+
+        h1 {
+            a {
+                font-size: 24px;
+                color: var(--heading);
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    text-decoration: none;
+                    color: var(--nav-text);
+                    font-size: 18px;
+                    padding: 0px;
+                    margin: 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .3s ease-in-out;
+
+                    &:hover {
+                        color: var(--title);
+                    }
+                }
+            }
+
+            img {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+section {
+    padding-top: 80px;
+    background-color: var(--nav-color);
+    border-bottom: 1px solid var(--nav-border-cl);
+    .container {
+        padding: 20px 0px;
+        text-align: center;
+
+        h1 {
+            font-size: 45px;
+            font-weight: 500;
+            color: var(--body-text);
+            text-transform: uppercase;
+        }
+    }
+
+    &:nth-child(2) {
+        background-color: transparent;
+        margin: 25px 0px 50px;
+        border: none;
+
+        .container {
+            width: 731px;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            row-gap: 15px;
+            text-align: start;
+            padding: 0px 20px;
+
+            p {
+                width: 100%;
+                padding: 0px !important;
+                font-size: 18px;
+                color: var(--body-text);
+                margin: 0px 0px 20px 0px;
+
+                a {
+                    color: var(--link);
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            figure {
+                text-align: center;
+                color: var(--figure-text);
+                width: 100%;
+                object-fit: cover;
+
+                .figure_wrapper {
+                    width: 100%;
+                    height: 450px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                figcaption {
+                    margin: 10px 0px 0px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    height: 78px;
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--body-text);
+    }
+}

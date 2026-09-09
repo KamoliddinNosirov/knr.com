@@ -5,7 +5,7 @@
   /* umumiy fon */
   --heading: #182231;
   /* "Azim Pulat's Blog" logotip matni */
-  --nav-text: #7F7F7F;
+  --nav-text: #7D7D7E;
   /* nav havolalari (42, Blog, Talks, Channel) */
   --title: #262626;
   /* post sarlavhasi (H1) */
@@ -13,8 +13,9 @@
   /* sana matni */
   --body-text: #404040;
   /* asosiy paragraf matni */
-  --link: #16A34A;
+    --link: #4390F7;
   /* moviy o'rniga — YASHIL (asl #317CF7) */
+  --nav-color: #FAFAFC;
 }
 
 
@@ -38,7 +39,12 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
+
   .container {
     display: flex;
     align-items: center;
@@ -46,8 +52,10 @@ nav {
     padding: 25px 0px;
 
     h1 {
-      color: var(--heading);
-      font-size: 24px;
+      a {
+        font-size: 24px;
+        color: var(--heading);
+      }
     }
 
     ul {
@@ -93,7 +101,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 78.3vh;
 
   .container {
     display: flex;
@@ -175,10 +183,13 @@ section {
           padding: 10px 25px;
           border: 1px solid var(--link);
           background-color: var(--link);
-          color: white;
           border-radius: 5px;
           font-size: 16px;
           font-weight: bold;
+
+          a {
+            color: white;
+          }
 
           &:hover {
             opacity: 0.8;
@@ -187,7 +198,10 @@ section {
 
           &:nth-child(2) {
             background-color: transparent;
-            color: var(--link);
+
+            a {
+              color: var(--link);
+            }
           }
         }
       }
@@ -206,3 +220,4 @@ footer {
     color: var(--body-text);
   }
 }
+
