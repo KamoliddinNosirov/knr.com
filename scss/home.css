@@ -16,6 +16,8 @@
   --link: #4390F7;
   /* moviy o'rniga — YASHIL (asl #317CF7) */
   --nav-color: #FAFAFC;
+  --nav-border-cl: #EDEDEF;
+  --figure-text: #7B828A;
 }
 
 * {
@@ -159,25 +161,21 @@ section .container .detail .btns {
   justify-content: start;
   gap: 10px;
 }
-section .container .detail .btns button {
-  padding: 10px 25px;
+section .container .detail .btns a {
+  padding: 8px 30px;
   border: 1px solid var(--link);
   background-color: var(--link);
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-}
-section .container .detail .btns button a {
   color: white;
 }
-section .container .detail .btns button:hover {
+section .container .detail .btns a:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-section .container .detail .btns button:nth-child(2) {
+section .container .detail .btns a:nth-child(2) {
   background-color: transparent;
-}
-section .container .detail .btns button:nth-child(2) a {
   color: var(--link);
 }
 

@@ -13,9 +13,11 @@
   /* sana matni */
   --body-text: #404040;
   /* asosiy paragraf matni */
-    --link: #4390F7;
+  --link: #4390F7;
   /* moviy o'rniga — YASHIL (asl #317CF7) */
   --nav-color: #FAFAFC;
+  --nav-border-cl: #EDEDEF;
+  --figure-text: #7B828A;
 }
 
 
@@ -179,17 +181,14 @@ section {
         justify-content: start;
         gap: 10px;
 
-        button {
-          padding: 10px 25px;
+        a {
+          padding: 8px 30px;
           border: 1px solid var(--link);
           background-color: var(--link);
           border-radius: 5px;
           font-size: 16px;
           font-weight: bold;
-
-          a {
-            color: white;
-          }
+          color: white;
 
           &:hover {
             opacity: 0.8;
@@ -198,10 +197,7 @@ section {
 
           &:nth-child(2) {
             background-color: transparent;
-
-            a {
-              color: var(--link);
-            }
+            color: var(--link);
           }
         }
       }
@@ -220,4 +216,3 @@ footer {
     color: var(--body-text);
   }
 }
-

@@ -16,6 +16,8 @@
   --link: #4390F7;
   /* moviy o'rniga — YASHIL (asl #317CF7) */
   --nav-color: #FAFAFC;
+  --nav-border-cl: #EDEDEF;
+  --figure-text: #7B828A;
 }
 
 * {
@@ -48,6 +50,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 nav.bgheader {
   background-color: white;
@@ -114,4 +117,97 @@ section .container h1 {
   font-weight: 500;
   color: var(--body-text);
   text-transform: uppercase;
+}
+section:nth-child(2) {
+  background-color: transparent;
+  padding: 0px;
+}
+section:nth-child(2) .container .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+section:nth-child(2) .container .row .archive {
+  flex-basis: 58.3333333333%;
+  width: 58.3333333333%;
+  text-align: start;
+  border: 1px solid red;
+}
+section:nth-child(2) .container .row .archive .month {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 9px;
+  border-bottom: 1px solid var(--nav-border-cl);
+  padding-bottom: 10px;
+  color: var(--title);
+}
+section:nth-child(2) .container .row .archive .sticky {
+  position: sticky;
+  display: inline-block;
+  padding: 8px 25px 11px;
+  border-radius: 50px;
+  background: #eee;
+  top: 100px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  z-index: 2;
+  font-weight: 500;
+}
+section:nth-child(2) .container .row .archive .list-wrapper {
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+section:nth-child(2) .container .row .archive .list-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 30px;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  row-gap: 5px;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  padding: 10px 0px;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.075);
+  transition: 0.3s all ease;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item .date {
+  color: var(--date-muted);
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item .title {
+  color: var(--title);
+  font-weight: 400;
+}
+section:nth-child(2) .container .row .subscribe-form {
+  position: sticky !important;
+  flex-basis: 33.3333333333%;
+  max-width: 33.3333333333%;
+  height: 150px;
+  text-align: start;
+  top: 130px !important;
+  z-index: 2;
+}
+section:nth-child(2) .container .row .subscribe-form h6 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+section:nth-child(2) .container .row .subscribe-form p {
+  font-size: 18px;
+  color: var(--body-text);
+}
+section:nth-child(2) .container .row .subscribe-form p a {
+  color: var(--link);
 }/*# sourceMappingURL=blog.css.map */
