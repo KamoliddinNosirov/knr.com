@@ -55,7 +55,7 @@ nav {
 
   &.bgheader {
     background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05);
 
     .container {
       border: none;
@@ -130,6 +130,7 @@ section {
       font-weight: 500;
       color: var(--body-text);
       text-transform: uppercase;
+      letter-spacing: 0.8px;
     }
   }
 
@@ -140,7 +141,6 @@ section {
     .container {
       .row {
         width: 100%;
-        // border: 1px solid red;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -149,12 +149,11 @@ section {
           flex-basis: 58.333333333333336%;
           width: 58.333333333333336%;
           text-align: start;
-          border: 1px solid red;
 
           .month {
             font-size: 30px;
             font-weight: 500;
-            margin: 0 0 9px;
+            margin: 25px 0 9px;
             border-bottom: 1px solid var(--nav-border-cl);
             padding-bottom: 10px;
             color: var(--title);
@@ -163,28 +162,78 @@ section {
           .sticky {
             position: sticky;
             display: inline-block;
-            padding: 8px 25px 11px;
+            padding: 8px 28px;
             border-radius: 50px;
             background: #eee;
             top: 100px;
             font-size: 20px;
-            margin-bottom: 20px;
+            margin-left: -48px;
             z-index: 2;
-            font-weight: 500;
+            font-weight: 400;
+            margin-top: 25px;
+
+            &:nth-child(1) {
+              margin-top: auto;
+            }
           }
 
           .list-wrapper {
             width: 100%;
-            border-radius: 5px;
             position: relative;
+            border-bottom: 1px solid var(--nav-border-cl);
+            padding: 0 10px;
+            transition: 0.3s all ease;
 
-            &::after{
+
+            span {
+              position: absolute;
+              right: 40px;
+              top: 50%;
+              transform: translateY(-50%) translateX(0);
+              opacity: 0;
+              transition: all .3s ease;
+            }
+
+
+            &::after {
               content: '';
               position: absolute;
               top: 0;
-              left: 0;
-              background-color: black;
-              width: 30px;
+              left: -15px;
+              background-color: var(--link);
+              width: 20px;
+              height: 100%;
+              opacity: 0;
+              border-radius: 20px 0 0 20px;
+            }
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: -15px;
+              background-color: var(--link);
+              width: 20px;
+              height: 100%;
+              opacity: 0;
+              border-radius: 0 20px 20px 0;
+            }
+
+            &:hover {
+              box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.075);
+
+              &::after {
+                opacity: 1;
+              }
+
+              &::before {
+                opacity: 1;
+              }
+
+              span {
+                opacity: 0;
+                transform: translateY(-50%) translateX(10px);
+              }
             }
 
             .list-item {
@@ -198,10 +247,7 @@ section {
               letter-spacing: 0.4px;
               padding: 10px 0px;
 
-              &:hover {
-              box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.075);
-              transition: 0.3s all ease;
-            }
+
 
               .date {
                 color: var(--date-muted);

@@ -53,7 +53,7 @@ nav {
 }
 nav.bgheader {
   background-color: white;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05);
 }
 nav.bgheader .container {
   border: none;
@@ -116,11 +116,13 @@ section .container h1 {
   font-weight: 500;
   color: var(--body-text);
   text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 section:nth-child(2) {
   background-color: transparent;
   margin: 25px 0px 50px;
   border: none;
+  padding: 0px;
 }
 section:nth-child(2) .container {
   width: 731px;

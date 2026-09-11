@@ -52,13 +52,15 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    &.bgheader{
+
+    &.bgheader {
         background-color: white;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        .container{
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+        .container {
             border: none;
         }
     }
+
     .container {
         display: flex;
         align-items: center;
@@ -116,6 +118,7 @@ section {
     padding-top: 80px;
     background-color: var(--nav-color);
     border-bottom: 1px solid var(--nav-border-cl);
+
     .container {
         padding: 20px 0px;
         text-align: center;
@@ -125,6 +128,8 @@ section {
             font-weight: 500;
             color: var(--body-text);
             text-transform: uppercase;
+            letter-spacing: 0.8px;
+
         }
     }
 
@@ -132,6 +137,7 @@ section {
         background-color: transparent;
         margin: 25px 0px 50px;
         border: none;
+        padding: 0px;
 
         .container {
             width: 731px;
@@ -152,7 +158,8 @@ section {
 
                 a {
                     color: var(--link);
-                    &:hover{
+
+                    &:hover {
                         opacity: 0.8;
                     }
                 }
