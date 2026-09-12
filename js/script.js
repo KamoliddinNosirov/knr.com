@@ -6,5 +6,11 @@ const bgheader = () => {
     navTag.classList.remove("bgheader")
   }
 }
-
 window.addEventListener("scroll", bgheader)
+
+
+// Brief user database
+
+const userDatabase = [
+  
+]

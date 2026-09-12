@@ -134,81 +134,29 @@ section:nth-child(2) .container .row .archive {
   width: 58.3333333333%;
   text-align: start;
 }
-section:nth-child(2) .container .row .archive .month {
-  font-size: 30px;
-  font-weight: 500;
-  margin: 25px 0 9px;
-  border-bottom: 1px solid var(--nav-border-cl);
-  padding-bottom: 10px;
-  color: var(--title);
-}
-section:nth-child(2) .container .row .archive .sticky {
-  position: sticky;
-  display: inline-block;
-  padding: 8px 28px;
-  border-radius: 50px;
-  background: #eee;
-  top: 100px;
-  font-size: 20px;
-  margin-left: -48px;
-  z-index: 2;
-  font-weight: 400;
-  margin-top: 25px;
-}
-section:nth-child(2) .container .row .archive .sticky:nth-child(1) {
-  margin-top: auto;
-}
 section:nth-child(2) .container .row .archive .list-wrapper {
   width: 100%;
-  position: relative;
-  border-bottom: 1px solid var(--nav-border-cl);
   padding: 0 10px;
   transition: 0.3s all ease;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-top: 40px;
 }
-section:nth-child(2) .container .row .archive .list-wrapper span {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%) translateX(0);
-  opacity: 0;
-  transition: all 0.3s ease;
+section:nth-child(2) .container .row .archive .list-wrapper img {
+  width: 150px;
+  height: 84px;
 }
-section:nth-child(2) .container .row .archive .list-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -15px;
-  background-color: var(--link);
-  width: 20px;
-  height: 100%;
-  opacity: 0;
-  border-radius: 20px 0 0 20px;
-}
-section:nth-child(2) .container .row .archive .list-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -15px;
-  background-color: var(--link);
-  width: 20px;
-  height: 100%;
-  opacity: 0;
-  border-radius: 0 20px 20px 0;
-}
-section:nth-child(2) .container .row .archive .list-wrapper:hover {
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.075);
-}
-section:nth-child(2) .container .row .archive .list-wrapper:hover::after {
-  opacity: 1;
-}
-section:nth-child(2) .container .row .archive .list-wrapper:hover::before {
-  opacity: 1;
-}
-section:nth-child(2) .container .row .archive .list-wrapper:hover span {
-  opacity: 0;
-  transform: translateY(-50%) translateX(10px);
+section:nth-child(2) .container .row .archive .list-wrapper li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 section:nth-child(2) .container .row .archive .list-wrapper .list-item {
+  width: 100%;
   display: flex;
   align-items: start;
   justify-content: start;
@@ -217,7 +165,42 @@ section:nth-child(2) .container .row .archive .list-wrapper .list-item {
   font-size: 17px;
   line-height: 1.5;
   letter-spacing: 0.4px;
-  padding: 10px 0px;
+  padding: 10px 15px 17px 15px;
+  position: relative;
+  color: var(--title);
+  border-top: 1px solid var(--nav-border-cl);
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  background-color: var(--bg-page);
+  width: 20px;
+  height: 100%;
+  opacity: 0;
+  border-radius: 0 20px 20px 0;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item span {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.075);
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item:hover::after {
+  opacity: 1;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item:hover::before {
+  opacity: 1;
+}
+section:nth-child(2) .container .row .archive .list-wrapper .list-item:hover span {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
 }
 section:nth-child(2) .container .row .archive .list-wrapper .list-item .date {
   color: var(--date-muted);
@@ -247,4 +230,15 @@ section:nth-child(2) .container .row .subscribe-form p {
 }
 section:nth-child(2) .container .row .subscribe-form p a {
   color: var(--link);
+}
+
+footer {
+  height: 78px;
+}
+footer .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--body-text);
 }/*# sourceMappingURL=talks.css.map */

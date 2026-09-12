@@ -247,4 +247,15 @@ section:nth-child(2) .container .row .subscribe-form p {
 }
 section:nth-child(2) .container .row .subscribe-form p a {
   color: var(--link);
+}
+
+footer {
+  height: 78px;
+}
+footer .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--body-text);
 }/*# sourceMappingURL=blog.css.map */
