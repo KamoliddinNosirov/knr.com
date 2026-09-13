@@ -5,7 +5,7 @@
   /* umumiy fon */
   --heading: #182231;
   /* "Azim Pulat's Blog" logotip matni */
-  --nav-text: #7D7D7E;
+  --nav-text: #7F7F7F;
   /* nav havolalari (42, Blog, Talks, Channel) */
   --title: #262626;
   /* post sarlavhasi (H1) */
@@ -16,7 +16,7 @@
   --link: #4390F7;
   /* moviy o'rniga — YASHIL (asl #317CF7) */
   --nav-color: #FAFAFC;
-  --nav-border-cl: #EDEDEF;
+  --nav-border-cl: #d4d4d5;
   --figure-text: #7B828A;
 }
 
@@ -50,6 +50,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 nav.bgheader {
   background-color: white;
@@ -63,7 +64,6 @@ nav .container {
   align-items: center;
   justify-content: space-between;
   padding: 17px 0px;
-  border-bottom: 1px solid var(--nav-border-cl);
 }
 nav .container h1 a {
   font-size: 24px;
@@ -104,78 +104,68 @@ nav .container ul img {
 
 section {
   padding-top: 80px;
-  background-color: var(--nav-color);
-  border-bottom: 1px solid var(--nav-border-cl);
 }
 section .container {
-  padding: 20px 0px;
-  text-align: center;
+  width: 630px;
+  overflow: hidden;
 }
-section .container h1 {
+section .container .row .article-header h1 {
   font-size: 45px;
   font-weight: 400;
-  color: var(--body-text);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  line-height: 58px;
 }
-section:nth-child(2) {
-  background-color: transparent;
-  margin: 25px 0px 50px;
-  border: none;
-  padding: 0px;
+section .container .row .article-header .date {
+  font-size: 18px;
+  color: var(--date-muted);
+  margin: 6px 0px 60px 0px;
+  position: relative;
 }
-section:nth-child(2) .container {
-  width: 670px;
+section .container .row .article-header .date::after {
+  content: "";
+  position: absolute;
+  bottom: -33px;
+  left: 0;
+  width: 65px;
+  height: 1.8px;
+  background-color: var(--nav-border-cl);
+}
+section .container .row .content {
   display: flex;
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  row-gap: 15px;
-  text-align: start;
-  padding: 0px 20px;
+  row-gap: 30px;
 }
-section:nth-child(2) .container p {
-  width: 100%;
-  padding: 0px !important;
+section .container .row .content h4 {
+  font-size: 27px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+section .container .row .content p {
   font-size: 18px;
-  color: var(--body-text);
-  margin: 0px 0px 20px 0px;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.5;
 }
-section:nth-child(2) .container p a {
+section .container .row .content p a {
   color: var(--link);
 }
-section:nth-child(2) .container p a:hover {
-  opacity: 0.8;
-}
-section:nth-child(2) .container figure {
-  text-align: center;
-  color: var(--figure-text);
+section .container .row .content figure {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
-section:nth-child(2) .container figure .figure_wrapper {
+section .container .row .content figure .figure-wrapper {
   width: 100%;
   height: 450px;
 }
-section:nth-child(2) .container figure .figure_wrapper img {
+section .container .row .content figure .figure-wrapper img {
   width: 100%;
   height: 100%;
-  -o-object-position: center;
-     object-position: center;
 }
-section:nth-child(2) .container figure figcaption {
-  margin: 10px 0px 0px;
-  font-size: 18px;
+section .container .row .content figure .iframe-wrap {
+  width: 100%;
+  height: 355px;
 }
-
-footer {
-  height: 78px;
-}
-footer .container {
+section .container .row .content figure .iframe-wrap iframe {
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--body-text);
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=oneBlog.css.map */

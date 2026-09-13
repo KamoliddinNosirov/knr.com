@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-  width: 1000px;
+  width: 961px;
   margin: 0 auto;
 }
 
@@ -46,12 +46,11 @@ a {
 }
 
 nav {
-
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 0px;
+    padding: 16px 0px;
 
     h1 {
       a {
@@ -103,7 +102,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 78.3vh;
+  height: 80.8vh;
 
   .container {
     display: flex;
@@ -167,7 +166,7 @@ section {
       align-items: start;
       justify-content: start;
       flex-direction: column;
-      margin-top: 30px;
+      margin-top: 20px;
 
       p {
         font-size: 20px;

@@ -5,7 +5,7 @@
     /* umumiy fon */
     --heading: #182231;
     /* "Azim Pulat's Blog" logotip matni */
-    --nav-text: #7D7D7E;
+    --nav-text: #7F7F7F;
     /* nav havolalari (42, Blog, Talks, Channel) */
     --title: #262626;
     /* post sarlavhasi (H1) */
@@ -16,9 +16,8 @@
     --link: #4390F7;
     /* moviy o'rniga — YASHIL (asl #317CF7) */
     --nav-color: #FAFAFC;
-    --nav-border-cl: #EDEDEF;
+    --nav-border-cl: #d4d4d5;
     --figure-text: #7B828A;
-
 }
 
 
@@ -52,10 +51,12 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
 
     &.bgheader {
         background-color: white;
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+
         .container {
             border: none;
         }
@@ -66,7 +67,6 @@ nav {
         align-items: center;
         justify-content: space-between;
         padding: 17px 0px;
-        border-bottom: 1px solid var(--nav-border-cl);
 
         h1 {
             a {
@@ -116,89 +116,86 @@ nav {
 
 section {
     padding-top: 80px;
-    background-color: var(--nav-color);
-    border-bottom: 1px solid var(--nav-border-cl);
 
     .container {
-        padding: 20px 0px;
-        text-align: center;
+        width: 630px;
+        overflow: hidden;
 
-        h1 {
-            font-size: 45px;
-            font-weight: 400;
-            color: var(--body-text);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-
-        }
-    }
-
-    &:nth-child(2) {
-        background-color: transparent;
-        margin: 25px 0px 50px;
-        border: none;
-        padding: 0px;
-
-        .container {
-            width: 670px;
-            display: flex;
-            align-items: start;
-            justify-content: start;
-            flex-direction: column;
-            row-gap: 15px;
-            text-align: start;
-            padding: 0px 20px;
-
-            p {
-                width: 100%;
-                padding: 0px !important;
-                font-size: 18px;
-                color: var(--body-text);
-                margin: 0px 0px 20px 0px;
-
-                a {
-                    color: var(--link);
-
-                    &:hover {
-                        opacity: 0.8;
-                    }
-                }
-            }
-
-            figure {
-                text-align: center;
-                color: var(--figure-text);
-                width: 100%;
-                object-fit: cover;
-
-                .figure_wrapper {
-                    width: 100%;
-                    height: 450px;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-position: center;
-                    }
+        .row {
+            .article-header {
+                h1 {
+                    font-size: 45px;
+                    font-weight: 400;
+                    line-height: 58px;
                 }
 
-                figcaption {
-                    margin: 10px 0px 0px;
+                .date {
                     font-size: 18px;
+                    color: var(--date-muted);
+                    margin: 6px 0px 60px 0px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -33px;
+                        left: 0;
+                        width: 65px;
+                        height: 1.8px;
+                        background-color: var(--nav-border-cl);
+                    }
                 }
             }
+
+            .content {
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                flex-direction: column;
+                row-gap: 30px;
+
+                h4 {
+                    font-size: 27px;
+                    font-weight: 400;
+                    margin-top: 20px;
+                }
+
+                p {
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                    color: rgba(0, 0, 0, 0.75);
+                    line-height: 1.5;
+
+                    a {
+                        color: var(--link);
+                    }
+                }
+
+                figure {
+                    width: 100%;
+
+                    .figure-wrapper {
+                        width: 100%;
+                        height: 450px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .iframe-wrap {
+                        width: 100%;
+                        height: 355px;
+
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+            }
         }
-    }
-}
-
-footer {
-    height: 78px;
-
-    .container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--body-text);
     }
 }
