@@ -17,7 +17,7 @@
   /* moviy o'rniga — YASHIL (asl #317CF7) */
   --nav-color: #FAFAFC;
   --nav-border-cl: #EDEDEF;
-  --figure-text: #7B828A;
+  --figure-text: #00000080;
 }
 
 * {
@@ -49,6 +49,13 @@ nav .container {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0px;
+}
+nav .container button {
+  display: none;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
 }
 nav .container h1 a {
   font-size: 24px;
@@ -187,5 +194,69 @@ footer .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--body-text);
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+
+@media (max-width: 467px) {
+  .container {
+    width: 100%;
+    padding: 0px 15px !important;
+  }
+  nav .container {
+    position: relative;
+    padding: 16px 16px !important;
+  }
+  nav .container button {
+    display: block;
+  }
+  nav .container ul {
+    width: 100%;
+    position: absolute;
+    top: 79px;
+    left: 0px;
+    padding: 15px;
+    display: none;
+    align-items: start;
+    flex-direction: column;
+    background-color: var(--bg-page);
+  }
+  nav .container ul a {
+    width: 100%;
+  }
+  nav.active {
+    border-bottom: 1px solid var(--nav-border-cl);
+  }
+  nav.active ul {
+    display: flex;
+  }
+  section {
+    height: auto;
+    padding: 160px 0px;
+  }
+  section .container .about {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  section .container .about img {
+    width: 110px;
+    height: 110px;
+  }
+  section .container .about .about-detail h1 {
+    font-size: 30px;
+  }
+  section .container .about .about-detail h3 {
+    font-size: 25px;
+  }
+  section .container .detail {
+    width: 90%;
+  }
+  section .container .detail p {
+    font-size: 18px;
+  }
+  footer {
+    height: auto;
+    padding: 12px 0px;
+  }
 }/*# sourceMappingURL=home.css.map */
