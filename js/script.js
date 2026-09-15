@@ -1,9 +1,9 @@
 const bgheader = () => {
   const navTag = document.querySelector('.navbg')
   if (window.scrollY > 20) {
-    navTag.classList.add("bgheader")
+    navTag?.classList.add("bgheader")
   } else {
-    navTag.classList.remove("bgheader")
+    navTag?.classList.remove("bgheader")
   }
 }
 window.addEventListener("scroll", bgheader)
@@ -27,15 +27,16 @@ window.addEventListener("scroll", bgheader)
 const navEl = document.querySelector("nav")
 const menuBtn = document.querySelector("nav button")
 
+
 menuBtn.addEventListener("click", ()=>{
   navEl.classList.toggle("active")
   const iTag = menuBtn.querySelector("i")
-  if(navEl.classList != "active"){
+  console.log(iTag);
+  if(navEl?.classList[1] != "active"){
     iTag.classList.add("fa-bars")
     iTag.classList.remove("fa-x")
   }else{
     iTag.classList.remove("fa-bars")
     iTag.classList.add("fa-x")
   }
-  
 })
