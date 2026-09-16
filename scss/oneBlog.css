@@ -233,7 +233,7 @@ section .container .row .subscribe-form p a {
 }
 section .container .row .custom-pagination {
   width: 100%;
-  margin-top: 100px !important;
+  margin-top: 100px;
 }
 section .container .row .custom-pagination .pagination-list {
   width: 100%;
@@ -253,6 +253,9 @@ section .container .row .custom-pagination .pagination-list .col {
   transition: all 0.3s ease;
   color: var(--link);
   border: 1px solid var(--nav-border-cl);
+}
+section .container .row .custom-pagination .pagination-list .col a {
+  color: var(--link);
 }
 section .container .row .custom-pagination .pagination-list .col:nth-child(2) {
   border-left: none;
@@ -319,6 +322,47 @@ footer .container {
   }
   nav.active ul {
     display: flex;
+  }
+  section {
+    padding-top: 100px;
+  }
+  section .container {
+    width: 100%;
+  }
+  section .container .article-header {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  section .container .article-header .back {
+    font-size: 15px !important;
+  }
+  section .container .article-header h1 {
+    font-size: 40px !important;
+  }
+  section .container .article-header .article-detail .date {
+    font-size: 12px !important;
+  }
+  section .container .content {
+    row-gap: 20px !important;
+  }
+  section .container .content h4 {
+    font-size: 25px !important;
+  }
+  section .container .content p {
+    font-size: 16px !important;
+  }
+  section .container .content figure .figure-wrapper {
+    height: 250px !important;
+  }
+  section .container .content figure .iframe-wrap {
+    height: 225px !important;
+  }
+  section .container .subscribe-form {
+    margin-bottom: 20px !important;
+    margin-top: 50px !important;
+  }
+  section .container .custom-pagination {
+    margin-top: 60px !important;
   }
   footer {
     height: auto;

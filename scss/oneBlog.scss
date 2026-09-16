@@ -268,7 +268,7 @@ section {
 
             .custom-pagination {
                 width: 100%;
-                margin-top: 100px !important;
+                margin-top: 100px;
                 .pagination-list {
                     width: 100%;
                     display: flex;
@@ -286,6 +286,9 @@ section {
                         transition: all .3s ease;
                         color: var(--link);
                         border: 1px solid var(--nav-border-cl);
+                        a{
+                            color: var(--link);
+                        }
                         &:nth-child(2){
                             border-left: none;
                             border-right: none;
@@ -364,6 +367,52 @@ footer {
 
       ul {
         display: flex;
+      }
+    }
+  }
+
+  section {
+    padding-top: 100px;
+    .container {
+      width: 100%;
+      .article-header{
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        .back{
+            font-size: 15px !important;
+        }
+        h1{
+            font-size: 40px !important;
+        }
+        .article-detail{
+            .date{
+                font-size: 12px !important;
+            }
+        }
+      }
+      .content{
+        row-gap: 20px !important;
+        h4{
+            font-size: 25px !important;
+        }
+        p{
+            font-size: 16px !important;
+        }
+        figure{
+            .figure-wrapper{
+                height: 250px !important;
+            }
+            .iframe-wrap{
+                height: 225px !important;
+            }
+        }
+      }
+      .subscribe-form{
+        margin-bottom: 20px !important;
+        margin-top: 50px !important;
+      }
+      .custom-pagination{
+        margin-top: 60px !important;
       }
     }
   }
