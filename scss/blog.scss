@@ -31,6 +31,10 @@
 body {
   background-color: var(--bg-page);
   font-family: "Source Sans 3", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh; // mobil brauzerlarda manzil paneli hisobga olinadi
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -144,6 +148,7 @@ section {
   &:nth-child(2) {
     background-color: transparent;
     padding: 0px;
+    border-bottom: none;
 
     .container {
 
@@ -303,7 +308,7 @@ section {
 
 footer {
   height: 78px;
-
+  margin-top: auto;
   .container {
     height: 100%;
     display: flex;

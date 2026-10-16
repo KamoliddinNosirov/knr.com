@@ -30,6 +30,10 @@
 body {
   background-color: var(--bg-page);
   font-family: "Source Sans 3", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -128,6 +132,7 @@ section .container h1 {
 section:nth-child(2) {
   background-color: transparent;
   padding: 0px;
+  border-bottom: none;
 }
 section:nth-child(2) .container .row {
   width: 100%;
@@ -230,6 +235,7 @@ section:nth-child(2) .container .row .subscribe-form p a {
 
 footer {
   height: 78px;
+  margin-top: auto;
 }
 footer .container {
   height: 100%;
