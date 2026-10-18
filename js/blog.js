@@ -2,18 +2,29 @@
 
 const blogPostLink = "https://kamoliddinuz.pythonanywhere.com/blogs/?page=1&page_size=0"
 const archive = document.querySelector(".archive")
+const loader = document.querySelector(".loader")
+const loader_Img = document.querySelector(".loader_img")
+const subscribe_form = document.querySelector(".subscribe-form")
 
-const MONTHS = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun",
-                "Iyul", "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr"]
+
+const MONTHS = ["January", "February", "March", "April", "May", "June",
+ "July", "August", "September", "October", "November", "December"]
 
 async function getBlogPosts(link) {
+  loader.classList.add("active")
+  loader_Img.classList.add("active")
+  subscribe_form.classList.add("remove")
   try {
     const res = await fetch(link)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     renderPosts(data.results)
   } catch (err) {
     console.error("Blog postlarni olishda xato:", err)
+    archive.innerHTML = `<p>Postlarni yuklab bo'lmadi.</p>`
+  } finally {
+    loader.classList.remove("active")
+    loader_Img.classList.remove("active")
+    subscribe_form.classList.remove("remove")
   }
 }
 
@@ -24,53 +35,48 @@ function formatDay(iso) {
   return `${d.getDate()} ${MONTHS[d.getMonth()]}, ${d.getFullYear()}`
 }
 
-function groupPosts(posts) {
-  const groups = {}
-  posts.forEach((item) => {
-    const d = new Date(item.created_at)
-    const year = d.getFullYear()
-    const month = d.getMonth()
-
-    groups[year] ??= {}
-    groups[year][month] ??= []
-    groups[year][month].push(item)
-  })
-  return groups
-}
-
 function renderPosts(posts = []) {
   const sorted = [...posts].sort(
     (a, b) => new Date(b.created_at) - new Date(a.created_at)
   )
 
-  const groups = groupPosts(sorted)
-  const years = Object.keys(groups).sort((a, b) => b - a)
+  // yil -> (oy -> postlar ro'yxati)
+  const years = new Map()
 
-  archive.innerHTML = years.map((year) => {
-    const months = Object.keys(groups[year]).sort((a, b) => b - a)
+  for (const post of sorted) {
+    const d = new Date(post.created_at)
+    const year = d.getFullYear()
+    const month = d.getMonth()
 
-    const monthsHtml = months.map((month) => {
-      const itemsHtml = groups[year][month].map((item) => `
-        <ul class="list-wrapper">
-          <span><i class="fa-solid fa-arrow-right-long"></i></span>
-          <li>
-            <a class="list-item" href="./Oneblog.html?id=${item.id}">
-              <div class="date">${formatDay(item.created_at)}</div>
-              <div class="title">${item.title}</div>
-            </a>
-          </li>
-        </ul>
-      `).join("")
+    if (!years.has(year)) years.set(year, new Map())
+    const months = years.get(year)
 
-      return `
-        <h4 class="month">${MONTHS[month]}</h4>
-        ${itemsHtml}
-      `
-    }).join("")
+    if (!months.has(month)) months.set(month, [])
+    months.get(month).push(post)
+  }
 
-    return `
-      <h4 class="sticky">${year}</h4>
-      ${monthsHtml}
-    `
-  }).join("")
+  let html = ""
+
+  for (const [year, months] of years) {
+    html += `<h4 class="sticky">${year}</h4>`
+
+    for (const [month, items] of months) {
+      html += `<h4 class="month">${MONTHS[month]}</h4>`
+
+      for (const item of items) {
+        html += `
+          <ul class="list-wrapper">
+            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+            <li>
+              <a class="list-wrapper" href="./OneBlog.html?slug=${encodeURIComponent(item.slug)}">
+                <div class="date">${formatDay(item.created_at)}</div>
+                <div class="title">${item.title}</div>
+              </a>
+            </li>
+          </ul>`
+      }
+    }
+  }
+
+  archive.innerHTML = html
 }

@@ -30,6 +30,10 @@
 body {
   background-color: var(--bg-page);
   font-family: "Source Sans 3", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -115,6 +119,16 @@ section {
 section .container {
   width: 630px;
 }
+section .container .article-loader {
+  width: 100%;
+  display: none;
+}
+section .container .article-loader.active {
+  display: block;
+}
+section .container .article-loader img {
+  width: 100%;
+}
 section .container .row .article-header {
   margin-bottom: 30px;
   padding-bottom: 30px;
@@ -190,6 +204,12 @@ section .container .row .content p a {
 }
 section .container .row .content figure {
   width: 100%;
+}
+section .container .row .content figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
 }
 section .container .row .content figure .figure-wrapper {
   width: 100%;
@@ -282,6 +302,7 @@ section .container .row .custom-pagination .pagination-list .col:nth-child(3):ho
 
 footer {
   height: 78px;
+  margin-top: auto;
 }
 footer .container {
   height: 100%;
@@ -345,11 +366,24 @@ footer .container {
   section .container .content {
     row-gap: 20px !important;
   }
+  section .container .content p,
+  section .container .content h4 {
+    margin: 0;
+  }
   section .container .content h4 {
     font-size: 25px !important;
   }
   section .container .content p {
     font-size: 16px !important;
+  }
+  section .container .content figure {
+    width: 100%;
+  }
+  section .container .content figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
   }
   section .container .content figure .figure-wrapper {
     height: 250px !important;

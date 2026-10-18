@@ -2,12 +2,18 @@
 
 const userDataLink = "https://kamoliddinuz.pythonanywhere.com/user/"
 const homeBlock = document.querySelector(".home-block")
+const section_Home = document.querySelector(".section-home")
+const loader = document.querySelector(".loader")
 
 async function getUserData(link) {
+  loader.classList.add("active")
+  section_Home.classList.add("remove")
   try {
     const res = await fetch(link)
     const data = await res.json()
     renderUser(data[0])
+    loader.classList.remove("active")
+    section_Home.classList.remove("remove")
   } catch (err) {
     console.error("User data olishda xato:", err)
   }

@@ -118,6 +118,21 @@ section {
   background-color: var(--nav-color);
   border-bottom: 1px solid var(--nav-border-cl);
 }
+section .loader {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 210px;
+  left: 430px;
+  width: 600px;
+  height: 100px;
+}
+section .loader.active {
+  display: flex;
+}
+section .loader img {
+  width: 100%;
+}
 section .container {
   padding: 20px 0px;
   text-align: center;
@@ -192,7 +207,7 @@ section:nth-child(2) .container .row .archive .list-wrapper:hover span {
   opacity: 1;
   transform: translateY(-50%) translateX(15px);
 }
-section:nth-child(2) .container .row .archive .list-wrapper .list-item {
+section:nth-child(2) .container .row .archive .list-wrapper a {
   display: flex;
   align-items: start;
   justify-content: start;
@@ -202,13 +217,24 @@ section:nth-child(2) .container .row .archive .list-wrapper .list-item {
   line-height: 1.5;
   letter-spacing: 0.4px;
   padding: 10px 0px;
+  box-shadow: none;
 }
-section:nth-child(2) .container .row .archive .list-wrapper .list-item .date {
+section:nth-child(2) .container .row .archive .list-wrapper a .date {
   color: var(--date-muted);
 }
-section:nth-child(2) .container .row .archive .list-wrapper .list-item .title {
+section:nth-child(2) .container .row .archive .list-wrapper a .title {
   color: var(--title);
   font-weight: 400;
+}
+section:nth-child(2) .container .row .loader_img {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -60px;
+  width: 400px;
+}
+section:nth-child(2) .container .row .loader_img.active {
+  display: block;
 }
 section:nth-child(2) .container .row .subscribe-form {
   position: sticky !important;
@@ -218,6 +244,10 @@ section:nth-child(2) .container .row .subscribe-form {
   text-align: start;
   top: 130px !important;
   z-index: 2;
+  display: block;
+}
+section:nth-child(2) .container .row .subscribe-form.remove {
+  display: none;
 }
 section:nth-child(2) .container .row .subscribe-form h6 {
   font-size: 18px;
@@ -305,7 +335,8 @@ footer .container {
   section:nth-child(2) .container .row .archive .month {
     font-size: 24px;
   }
-  section:nth-child(2) .container .row .archive .list-wrapper .list-item .date, section:nth-child(2) .container .row .archive .list-wrapper .list-item .title {
+  section:nth-child(2) .container .row .archive .list-wrapper .list-item .date,
+  section:nth-child(2) .container .row .archive .list-wrapper .list-item .title {
     font-size: 15px;
   }
   section:nth-child(2) .container .row .subscribe-form {
