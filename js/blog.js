@@ -3,6 +3,7 @@
 const blogPostLink = "https://kamoliddinuz.pythonanywhere.com/blogs/?page=1&page_size=0"
 const archive = document.querySelector(".archive")
 const loader = document.querySelector(".loader")
+const loader_mobile = document.querySelector(".loader-mobile")
 const loader_Img = document.querySelector(".loader_img")
 const subscribe_form = document.querySelector(".subscribe-form")
 
@@ -12,7 +13,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June",
 
 async function getBlogPosts(link) {
   loader.classList.add("active")
-  loader_Img.classList.add("active")
+  loader_mobile.classList.add("active")
   subscribe_form.classList.add("remove")
   try {
     const res = await fetch(link)
@@ -23,7 +24,7 @@ async function getBlogPosts(link) {
     archive.innerHTML = `<p>Postlarni yuklab bo'lmadi.</p>`
   } finally {
     loader.classList.remove("active")
-    loader_Img.classList.remove("active")
+    loader_mobile.classList.remove("active")
     subscribe_form.classList.remove("remove")
   }
 }

@@ -45,6 +45,10 @@ a {
   text-decoration: none;
 }
 
+.loader-mobile {
+  display: none;
+}
+
 .loader {
   width: 100%;
   height: 84.2vh;
@@ -56,7 +60,7 @@ a {
   display: flex;
 }
 .loader img {
-  width: 50%;
+  width: 70%;
   margin-top: 20px;
 }
 
@@ -114,7 +118,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 84.2vh;
+  height: 80vh;
 }
 section.remove {
   display: none;
@@ -221,6 +225,21 @@ footer .container {
     width: 100%;
     padding: 0px 15px !important;
   }
+  .loader {
+    display: none !important;
+  }
+  .loader-mobile {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader-mobile.active {
+    display: block;
+  }
+  .loader-mobile img {
+    width: 100%;
+  }
   nav .container {
     position: relative;
     padding: 16px 16px !important;
@@ -250,7 +269,7 @@ footer .container {
   }
   section {
     height: auto;
-    padding: 160px 0px;
+    padding: 60px 0px;
   }
   section .container .about {
     display: flex;

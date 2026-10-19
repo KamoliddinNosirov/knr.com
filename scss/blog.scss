@@ -135,11 +135,8 @@ section {
   .loader {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 210px;
-    left: 430px;
-    width: 600px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
 
     &.active {
       display: flex;
@@ -148,6 +145,10 @@ section {
     img {
       width: 100%;
     }
+  }
+
+  .loader-mobile {
+    display: none;
   }
 
   .container {
@@ -259,16 +260,16 @@ section {
           }
         }
 
-        .loader_img {
-          display: none;
-          position: absolute;
-          top: -4px;
-          right: -60px;
-          width: 400px;
-          &.active{
-            display: block;
-          }
-        }
+        // .loader_img {
+        //   display: none;
+        //   position: absolute;
+        //   top: -4px;
+        //   right: -60px;
+        //   width: 400px;
+        //   &.active{
+        //     display: block;
+        //   }
+        // }
 
         .subscribe-form {
           position: sticky !important;
@@ -280,7 +281,7 @@ section {
           z-index: 2;
           display: block;
 
-          &.remove{
+          &.remove {
             display: none;
           }
 
@@ -361,6 +362,24 @@ footer {
   }
 
   section {
+    .loader{
+      display: none !important;
+    }
+    .loader-mobile {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      &.active {
+        display: flex;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
     .container {
       padding: 20px 0px;
 
